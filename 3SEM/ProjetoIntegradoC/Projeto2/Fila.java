@@ -52,9 +52,8 @@ public class Fila <X> implements Cloneable
         if(this.inicio == this.quantidade)
             this.inicio = 0;
             
-        this.inicio++;
         this.quantidade--;
-        return this.vetFila[this.inicio - 1];
+        return this.vetFila[this.inicio++];
     }
     
     public boolean equals (Object obj)
