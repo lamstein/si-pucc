@@ -10,7 +10,7 @@ public class Fila <X> implements Cloneable
     public Fila (int tam) throws Excepetion
     {
         if(tam <= 0)
-            throws new Exception("Tamanho inválido.");
+            throws new Exception("Tamanho invï¿½lido.");
         
         vetFila = new Object[tam];
         this.inicio = 0;
@@ -43,7 +43,7 @@ public class Fila <X> implements Cloneable
         }
     }
     
-    //POR FAVOR REVISAR LÓGICA
+    //POR FAVOR REVISAR Lï¿½GICA
     public X pop () throws Exception
     {
         if(this.quantidade == 0)
@@ -120,7 +120,7 @@ public class Fila <X> implements Cloneable
         for(int i = 0;i<modelo.quantidade;i++)
         {
             if(modelo.vetFila[i] instanceof Cloneable)
-                this.vetFila[i] = modelo.vetFila[i].clone();
+                this.vetFila[i] =(X) modelo.vetFila[i].clone();
             else
                 this.vetFila[i] = modelo.vetFila[i];
         }

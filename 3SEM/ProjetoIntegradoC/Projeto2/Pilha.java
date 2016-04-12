@@ -91,15 +91,18 @@ public class Pilha <X> implements Cloneable
     public Pilha (Pilha modelo) throws Exception
     {
         if(modelo == null)
-            throw Exception ("Modelo não fornecido");
+            throw Exception ("Modelo nao fornecido");
             
         this.vetPilha = new Object [modelo.tamanho];
         
         for(int i=0;i<modelo.tamanho;i++){
             if(modelo.vetPilha[i] instanceof Cloneable)
-                this.vetPilha[i] = modelo.vetPilha[i].clone();
+                this.vetPilha[i] =(X) modelo.vetPilha[i].clone();
             else
                 this.vetPilha[i] = modelo.vetPilha[i];
+                
+        this.topo = modelo.topo;
+        this.tamanho = modelo.tamanho;Â¹
         }
         
         this.topo = modelo.topo;
