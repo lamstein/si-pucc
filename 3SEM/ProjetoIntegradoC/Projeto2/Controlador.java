@@ -10,5 +10,6 @@ public class Controlador{
 
     public void resolver()
     {
+        
     }
 }

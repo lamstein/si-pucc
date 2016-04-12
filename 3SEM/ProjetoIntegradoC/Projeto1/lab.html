@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projeto Integrado C :: Labirinto</title>
+    
+    <style>
+        table {
+            border-spacing: 0;
+        }
+        .M{
+            background-color: #34495e;
+            color: #34495e;
+        }
+        .P{
+            background-color: #bdc3c7;
+            color: #bdc3c7;
+        }
+        .E{
+            background-color: #3498db;
+            color: #3498db;
+        }
+        .S{
+            background-color: #e74c3c;
+            color: #e74c3c;
+        }
+        
+        .here{
+            background-color: #1abc9c;
+            color: #1abc9c;
+        }        
+    </style>    
+</head>
+
+<body onload="verificarFileAPI();">
+    <div id="container">
+        <h3>Labirinto:</h3>
+        <input type="file" onchange='lerArquivo(this)' />
+        
+        <hr>
+        
+        <div>
+            <table id="main"></table>                
+        </div>
+    </div>
+</body>
+<script src="labirinto.js"></script>
+</html>
