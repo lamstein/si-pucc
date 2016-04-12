@@ -8,7 +8,7 @@ public class Controlador{
         this.exp = exp;
     }
 
-    public void resolver(){
-        System.out.println("Eitcha");
+    public void resolver()
+    {
     }
 }

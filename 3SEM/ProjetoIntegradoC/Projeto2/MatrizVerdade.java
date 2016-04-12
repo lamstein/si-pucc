@@ -20,16 +20,14 @@ public class MatrizVerdade {
     }
 
     public Boolean getVerdade(String token, String pop) throws Exception {
-        System.out.print(this.teste.length);
-        return false;
-//        int l, c;
-//        l = this.indexOf(token);
-//        c = this.indexOf(pop);
-//
-//        if (l < 0 || c < 0)
-//            throw new Exception("Sua expressão contém operandos inválidos!");
-//
-//        return this.matriz[c][l];
+        int l, c;
+        l = this.indexOf(token);
+        c = this.indexOf(pop);
+
+        if (l < 0 || c < 0)
+            throw new Exception("Sua expressão contém operandos inválidos!");
+
+        return this.matriz[c][l];
     }
 
     protected Integer indexOf(String v) {
