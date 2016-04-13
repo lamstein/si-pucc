@@ -46,7 +46,7 @@ public class Fila <X> implements Cloneable
     }
     
     //POR FAVOR REVISAR L�GICA
-    public Object pop () throws Exception
+    public X pop () throws Exception
     {
         if(this.quantidade == 0)
             throw new Exception("Fila vazia");
@@ -55,7 +55,7 @@ public class Fila <X> implements Cloneable
             this.inicio = 0;
             
         this.quantidade--;
-        return this.vetFila[this.inicio++];
+        return (X) this.vetFila[this.inicio++];
     }
     
     public boolean equals (Object obj)
