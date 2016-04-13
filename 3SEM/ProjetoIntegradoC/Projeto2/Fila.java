@@ -78,7 +78,7 @@ public class Fila <X> implements Cloneable
         if(this.quantidade != aux.quantidade)
             return false;
             
-        for(int i=0;i<this.ultimo;i++)
+        for(int i=0;i<this.vetFila.length-1;i++)
             if(!this.vetFila[i].equals(aux.vetFila[i]))
                 return false;
                 
@@ -105,7 +105,7 @@ public class Fila <X> implements Cloneable
         res = res*13 + new Integer (this.tamanho).hashCode();
                 
         for(int i=0;i<this.quantidade;i++)
-            res = res*13 + new Integer (this.vetFila[i]).hashCode();
+            res = res*13 + new Integer ((int)this.vetFila[i]).hashCode();
         
         return res;
     }
