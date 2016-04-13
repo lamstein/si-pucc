@@ -1,3 +1,5 @@
+import java.lang.reflect.Method;
+
 public class Fila <X> implements Cloneable
 {
     protected Object [] vetFila;
@@ -7,10 +9,10 @@ public class Fila <X> implements Cloneable
     protected int tamanho;
     
     //Construtor para inicializar a fila;
-    public Fila (int tam) throws Excepetion
+    public Fila (int tam) throws Exception
     {
         if(tam <= 0)
-            throws new Exception("Tamanho inv�lido.");
+            throws new Exception("Tamanho invalido.");
         
         vetFila = new Object[tam];
         this.inicio = 0;
@@ -44,7 +46,7 @@ public class Fila <X> implements Cloneable
     }
     
     //POR FAVOR REVISAR L�GICA
-    public X pop () throws Exception
+    public Object pop () throws Exception
     {
         if(this.quantidade == 0)
             throw new Exception("Fila vazia");
@@ -138,7 +140,7 @@ public class Fila <X> implements Cloneable
         try{
             f = new Fila(this);
         }
-        catch
+        catch(Exception erro)
         {}
         
         return f;
