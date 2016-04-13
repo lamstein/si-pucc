@@ -1,3 +1,5 @@
+import java.lang.reflect.Method;
+
 public class Pilha <X> implements Cloneable
 {
     protected Object [] vetPilha;
@@ -38,7 +40,7 @@ public class Pilha <X> implements Cloneable
             throw new Exception ("Pilha vazia");
             
         this.topo--;
-        return this.vetPilha[this.topo + 1];
+        return (X) this.vetPilha[this.topo + 1];
     }
     
     public boolean equals (Object obj)
@@ -49,9 +51,9 @@ public class Pilha <X> implements Cloneable
         if(obj==null)
             return false;
         
-        if(!obj instanceof Pilha)
+        if(!obj instanceof Pilha){
             return false;
-            
+        }
         Pilha aux = (Pilha)obj;
         
         if(this.topo != aux.topo)
@@ -60,9 +62,10 @@ public class Pilha <X> implements Cloneable
         if(this.tamanho != aux.tamanho)
             return false;
             
-        for(int i=0;i<=this.topo;i++)
+        for(int i=0;i<=this.topo;i++){
             if(this.vetPilha[i] != aux.vetPilha[i])
                 return false;
+        }
     }
     
     public String toString ()
@@ -79,19 +82,20 @@ public class Pilha <X> implements Cloneable
     {
         int h = super.hashCode();
         
-        for(int i=0;i<this.tamanho;i++)
-            h = h*13 + Integer new (this.vetPilha[i]).hashCode();
-            
-        h = h*13 +  Integer new(this.topo).hashCode();
-        h = h*13 +  Integer new(this.tamanho).hashCode();
         
+        for(int i=0;i<this.tamanho;i++){
+            h = h*13 + new Integer  ((int)this.vetPilha[i]).hashCode();
+        }
+        h = h*13 +  new Integer  (this.topo).hashCode();
+        h = h*13 +  new Integer  (this.tamanho).hashCode();
+         
         return h;
     }
     
     public Pilha (Pilha modelo) throws Exception
     {
         if(modelo == null)
-            throw Exception ("Modelo nao fornecido");
+            throw new Exception ("Modelo nao fornecido");
             
         this.vetPilha = new Object [modelo.tamanho];
         
@@ -102,7 +106,7 @@ public class Pilha <X> implements Cloneable
                 this.vetPilha[i] = modelo.vetPilha[i];
                 
         this.topo = modelo.topo;
-        this.tamanho = modelo.tamanho;¹
+        this.tamanho = modelo.tamanho;
         }
         
         this.topo = modelo.topo;
